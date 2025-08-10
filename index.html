@@ -1,59 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nabeela's Trainer Card</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nabeela — AppSec Lead (GBA Portfolio)</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="game-screen">
-    <header class="header">
-      <h1>Trainer Nabeela</h1>
+  <div class="gba-frame">
+    <header class="gba-header">
+      <div class="left">
+        <div class="trainer-wrap">
+          <!-- Avatar: uses your external avatar link. You can replace with a local /assets/avatar.png -->
+          <img id="avatar-img" src="http://www.avatarsinpixels.com/chibi/eyJIYWlyTG93ZXIiOiIxMyIsIlNvY2tzIjoiNCIsIlBhbnRzIjoiMTgiLCJHbG92ZXMiOiIxIiwiVG9wIjoiMTQiLCJFeWVicm93cyI6IjEiLCJFeWVzIjoiOSIsIk1vdXRoIjoiOSIsIkhhaXJUb3AiOiI3IiwiaGFpclRvbmUiOiJiMDdjNDQiLCJoYWlyVG9uZTIiOiI0NmQ4NjQiLCJleWVzVG9uZSI6IjM5OTM2YSIsImV5ZXNUb25lMiI6IjE5NjQyYyIsInBhbnRzVG9uZSI6IjIxYzc2MCIsInBhbnRzVG9uZTIiOiJlOTJhM2EiLCJ0b3BUb25lIjoiN2YxYTc3IiwidG9wVG9uZTIiOiIyNTJhY2EiLCJzaG9lc1RvbmUiOiJlOGEyZTMiLCJzaG9lc1RvbmUyIjoiMjg3NWE3Iiwic29ja3NUb25lIjoiY2M5NjJjIiwiZ2xvdmVzVG9uZSI6ImU5NTRhMCIsImdsb3Zlc1RvbmUyIjoiNzM2NzZlIn0=/1/show.png" alt="avatar" class="trainer-img" onerror="this.classList.add('missing')">
+        </div>
+      </div>
+
+      <div class="center">
+        <div class="title">Nabeela</div>
+        <div class="subtitle">Lead Application Security Engineer</div>
+      </div>
+
+      <div class="right">
+        <div class="status">Lv. 32</div>
+        <div class="tags">AppSec • Cloud • Containers</div>
+      </div>
     </header>
 
-    <nav class="menu">
-      <button onclick="showSection('about')">About Me</button>
-      <button onclick="showSection('work')">Work</button>
-      <button onclick="showSection('skills')">Skills</button>
-      <button onclick="showSection('projects')">Projects</button>
-      <button onclick="showSection('contact')">Contact</button>
+    <nav class="gba-nav">
+      <button class="nav-btn active" data-target="about">About</button>
+      <button class="nav-btn" data-target="skills">Skills</button>
+      <button class="nav-btn" data-target="experience">Experience</button>
+      <button class="nav-btn" data-target="projects">Projects</button>
+      <button class="nav-btn" data-target="contact">Contact</button>
     </nav>
 
-    <main id="content">
-      <section id="about" class="section active">
-        <h2>About Me</h2>
-        <p>Lead Application Security Engineer | Kubernetes, Docker, AI Security enthusiast | Pixel art lover.</p>
+    <main class="gba-main">
+      <section id="about" class="module active">
+        <h2>About</h2>
+        <p class="lead">Security leader with 8+ years building developer-friendly guardrails for cloud-native applications. Focus: SAST, container security, CI/CD automation.</p>
+        <div class="badges">
+          <span class="badge">Base Image Program</span>
+          <span class="badge">SAST Automation</span>
+          <span class="badge">Container Security</span>
+        </div>
       </section>
 
-      <section id="work" class="section">
-        <h2>Work Experience</h2>
-        <ul>
-          <li>AppSec Lead — Container & CI/CD security programs</li>
-          <li>Pentester — Web/API, SAST automation</li>
-        </ul>
-      </section>
-
-      <section id="skills" class="section">
+      <section id="skills" class="module">
         <h2>Skills</h2>
-        <p>Docker, Kubernetes, AWS Security, SAST, SCA, Container Security, Threat Modeling</p>
+        <div class="skill-grid">
+          <div class="skill"><h3>Application Security</h3><p>SAST, SCA, secure code reviews</p></div>
+          <div class="skill"><h3>Cloud</h3><p>AWS security, IAM hardening, logging</p></div>
+          <div class="skill"><h3>Containers</h3><p>Docker hardening, Trivy, runtime security</p></div>
+        </div>
       </section>
 
-      <section id="projects" class="section">
+      <section id="experience" class="module">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="job">
+            <div class="job-title">Lead Application Security Engineer — Current</div>
+            <div class="job-desc">Driving container security and SAST automation across the org.</div>
+          </div>
+          <div class="job">
+            <div class="job-title">AppSec Engineer — Previous</div>
+            <div class="job-desc">Built CI/CD scanning pipelines and self-serve scanning tools.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="module">
         <h2>Projects</h2>
-        <ul>
-          <li>Base Image Refresh Cadence Program</li>
-          <li>Self-serve Container Scanning with Snyk</li>
-        </ul>
+        <div class="project-list">
+          <article class="proj-card">
+            <img class="proj-thumb" src="assets/project_card.png" alt="">
+            <div class="proj-meta">
+              <h4>Base Image Refresh Cadence</h4>
+              <p>Monthly refresh + Trivy scan. Result: -60% critical findings in 3 months.</p>
+              <p class="tech">Docker • Trivy • GitLab CI</p>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <img class="proj-thumb" src="assets/project_card.png" alt="">
+            <div class="proj-meta">
+              <h4>SAST Automation in CI/CD</h4>
+              <p>Incremental scans and PR gating with Semgrep & Sonar.</p>
+              <p class="tech">Semgrep • SonarQube • GitLab</p>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="contact" class="section">
+      <section id="contact" class="module">
         <h2>Contact</h2>
-        <p>Email: youremail@example.com</p>
-        <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
       </section>
     </main>
+
+    <footer class="gba-footer">Portfolio • GBA style • Professional content only</footer>
   </div>
-  <script src="script.js"></script>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
